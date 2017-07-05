@@ -40,10 +40,12 @@
 		(function() {
 			var links = document.getElementsByTagName("a");
 			for(var i=0; i<links.length; i++) {
-				var link = links[i]
-				link.addEventListener("click", function(){
-					linkClick(link)
-				});
+				(function(i) {
+					var link = links[i]
+					link.addEventListener("click", function(){
+						linkClick(link)
+					});
+				}(i));
 			}
 		})()
 
