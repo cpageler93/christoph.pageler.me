@@ -31,4 +31,21 @@
 	  ga('send', 'pageview');
 
 	</script>
+	<script type="text/javascript">
+		function linkClick(link) {
+			var title = link.innerHTML
+			ga('send', 'event', 'Link', title);
+		}
+
+		(function() {
+			var links = document.getElementsByTagName("a");
+			for(var i=0; i<links.length; i++) {
+				var link = links[i]
+				link.addEventListener("click", function(){
+					linkClick(link)
+				});
+			}
+		})()
+
+	</script>
 </html>
