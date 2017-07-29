@@ -1,0 +1,15 @@
+table {
+	width: 100%;
+
+	border-collapse: collapse;
+	tr:nth-child(odd) td {
+	    background-color: $grey-color-light;
+	}
+	tr td, tr th {
+		padding: 10px;
+	}
+}
+
+div.spacer {
+	height: 50px;
+}
