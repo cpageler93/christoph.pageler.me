@@ -122,18 +122,18 @@ generated: ./Dependencies.xcodeproj
 
 File > Add Files to "Your Workspace Name"
 
-![Add Files Screenshot]({{"/assets/spm_ios/1_add_files_to_jpperformance.png"|absolute_url}}){:width="50%"}
+![Add Files Screenshot]({{site.url}}/assets/spm_ios/1_add_files_to_jpperformance.png){:width="50%"}
 
 Select the new Dependencies.xcodeproj
 
-![Select Dependencies Project]({{"/assets/spm_ios/2_select_dependencies_project.png"|absolute_url}}){:width="80%"}
+![Select Dependencies Project]({{site.url}}/assets/spm_ios/2_select_dependencies_project.png){:width="80%"}
 
 
 Add **all** the frameworks from your **Dependencies** project to **Embedded binaries**.
 
-![Select Dependencies Project]({{"/assets/spm_ios/3_add_embedded_binaries.png"|absolute_url}}){:width="100%"}
+![Select Dependencies Project]({{site.url}}/assets/spm_ios/3_add_embedded_binaries.png){:width="100%"}
 
-![Select Dependencies Project]({{"/assets/spm_ios/4_add_all_frameworks.png"|absolute_url}}){:width="100%"}
+![Select Dependencies Project]({{site.url}}/assets/spm_ios/4_add_all_frameworks.png){:width="100%"}
 
 # First Problems
 
@@ -143,7 +143,7 @@ When importing one of the new dependencies one of the first errors i got was:
 Module file's minimum deployment target is ios11.4 v11.4: /Users/christoph/Library/Developer/Xcode/DerivedData/JPPerformance-cteaudztylounnaqgegjnjqthxbt/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule
 </code>
 
-![Select Dependencies Project]({{"/assets/spm_ios/5_first_problem_minimum_deployment_target.png"|absolute_url}}){:width="100%"}
+![Select Dependencies Project]({{site.url}}/assets/spm_ios/5_first_problem_minimum_deployment_target.png){:width="100%"}
 
 
 To solve this problem we have to set the deployment target to the matching target of the iOS project. In my case the **JP Fan App iOS Deployment Target is iOS 10**. Since we'll regulary update our dependencies and regenerate the `Dependencies.xcodeproj` it wasn't an option for me to set anything in the project by hand. We'll automate this with a [Rakefile][rake] as described in other "solutions".
@@ -232,7 +232,7 @@ If you want to build your app not just in Xcode for `debug` but also, in `releas
 
 For me the errors looked like "there is some macOS stuff inside my iOS binary". So i checked the configuration and found quite a few entries:
 
-![Remaining macOS Stuff]({{"/assets/spm_ios/6_remaining_macos_stuff.png"|absolute_url}}){:width="100%"}
+![Remaining macOS Stuff]({{site.url}}/assets/spm_ios/6_remaining_macos_stuff.png){:width="100%"}
 
 
 **LD_RUNPATH_SEARCH_PATHS** has a reference to macOS: `$(TOOLCHAIN_DIR)/usr/lib/swift/macosx`
