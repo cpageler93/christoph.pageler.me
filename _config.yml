@@ -19,7 +19,7 @@ description: > # this means to ignore newlines until "baseurl:"
   Developer from Oldenburg, Germany
   working at the peak lab.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://www.christoph.pageler.me" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://christoph.pageler.me" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: cpageler93
 github_username:  cpageler93
 
