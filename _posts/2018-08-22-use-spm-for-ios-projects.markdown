@@ -15,7 +15,7 @@ In the past few years the most common package managers were [CocoaPods][cocoapod
 
 The problem with Swift Package Manager is, that it is a Package Manager for **Swift** and not a platform package manager for **iOS**. So there is **no explicit support for depending on UIKit or AppKit**.
 
-Many voices are saying that it is not possible to use Swift Package Manager as a dependencie manager for iOS. Others offer solutions which are not working when it comes to uploading the app to the appstore.
+Many voices are saying that it is not possible to use Swift Package Manager for iOS. Others offer solutions which are not working when it comes to uploading the app to the appstore.
 
 # Real app walkthrough
 
@@ -147,6 +147,10 @@ Module file's minimum deployment target is ios11.4 v11.4: /Users/christoph/Libra
 
 
 To solve this problem we have to set the deployment target to the matching target of the iOS project. In my case the **JP Fan App iOS Deployment Target is iOS 10**. Since we'll regulary update our dependencies and regenerate the `Dependencies.xcodeproj` it wasn't an option for me to set anything in the project by hand. We'll automate this with a [Rakefile][rake] as described in other "solutions".
+
+{% highlight shell %}
+gem install rake
+{% endhighlight %}
 
 **Caution: this is not the final Rakefile** i'll describe the problems with using the other solutions and how i solved them.
 
