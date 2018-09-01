@@ -19,7 +19,7 @@ Many voices are saying that it is not possible to use Swift Package Manager for 
 
 # Real app walkthrough
 
-In this post i'm going to explain how to use Swift Package Manager for iOS projects and which kind of problems i had. I'm explaining this with one of the apps i made: [JP Fan App](https://itunes.apple.com/de/app/jp-fan-app/id1286558522).
+In this post I'm going to explain how to use Swift Package Manager for iOS projects and which kind of problems I had. I'm explaining this with one of the apps I made: [JP Fan App](https://itunes.apple.com/de/app/jp-fan-app/id1286558522).
 
 The app in my example is really simple and easy to understand. There is a backend service (using [vapor][vapor], also written in swift) running on a small [Digital Ocean][do] droplet. The backend service provides data in form of a REST interface. To access the backend service, my idea was to write a basic HTTP client which wraps the REST interface: **JPFanAppClient**. The good thing: writing this HTTP client using Swift Package Manager enables me to use the Framework on all environments iOS, macOS, tvOS, watchOS, Linux. So its easy for me to use the Framework on all of these platforms as well.
 
@@ -97,7 +97,7 @@ Resolving https://github.com/Alamofire/Alamofire at 4.7.3
 
 {% endhighlight %}
 
-Your output is maybe much smaller. In my case i'm using the [Quack][quack] HTTP client which wrapps Alamofire/Vapor HTTP and works on all swift platforms as well.
+Your output may be much smaller. In my case I'm using the [Quack][quack] HTTP client which wrapps Alamofire/Vapor HTTP and works on all swift platforms as well.
 
 {% highlight shell %}
 > swift package show-dependencies
@@ -112,7 +112,7 @@ Your output is maybe much smaller. In my case i'm using the [Quack][quack] HTTP 
 
 #### Import into your Xcode project
 
-To import the frameworks into the existing Xcode workspace i'll take advantage of the feature to generate an Xcode Project from my package.
+To import the frameworks into the existing Xcode workspace I'll take advantage of the feature to generate an Xcode Project from my package.
 
 {% highlight shell %}
 > swift package generate-xcodeproj
@@ -137,7 +137,7 @@ Add **all** the frameworks from your **Dependencies** project to **Embedded bina
 
 # First Problems
 
-When importing one of the new dependencies one of the first errors i got was:
+When importing one of the new dependencies one of the first errors I got was:
 
 <code>
 Module file's minimum deployment target is ios11.4 v11.4: /Users/christoph/Library/Developer/Xcode/DerivedData/JPPerformance-cteaudztylounnaqgegjnjqthxbt/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework/Modules/SwiftyJSON.swiftmodule/x86_64.swiftmodule
@@ -152,7 +152,7 @@ To solve this problem we have to set the deployment target to the matching targe
 gem install rake
 {% endhighlight %}
 
-**Caution: this is not the final Rakefile** i'll describe the problems with using the other solutions and how i solved them.
+**Caution: this is not the final Rakefile** i'll describe the problems with using the other solutions and how I solved them.
 
 {% highlight shell %}
 # create Rakefile
@@ -222,7 +222,7 @@ I'm using [fastlane][fastlane] to automate screenshot generation, testing or upl
 
 **Exporting the Archive**: Boom 💥  
 
-Somewhere when it comes to the command `xcodebuild -exportArchive -exportOptionsPlist /var/folders/7q/004mxqbj4kn117z_rptqddg80000gn/T/gym_config20180822-62378-1urdrvm.plist -archivePath '/Users/christoph/Library/Developer/Xcode/Archives/2018-08-22/JPPerformance 2018-08-22 14.37.11.xcarchive' -exportPath /var/folders/7q/004mxqbj4kn117z_rptqddg80000gn/T/gym_output20180822-62378-g7reue` i got a bunch of errors and warnings like the following:  
+Somewhere when it comes to the command `xcodebuild -exportArchive -exportOptionsPlist /var/folders/7q/004mxqbj4kn117z_rptqddg80000gn/T/gym_config20180822-62378-1urdrvm.plist -archivePath '/Users/christoph/Library/Developer/Xcode/Archives/2018-08-22/JPPerformance 2018-08-22 14.37.11.xcarchive' -exportPath /var/folders/7q/004mxqbj4kn117z_rptqddg80000gn/T/gym_output20180822-62378-g7reue` I got a bunch of errors and warnings like the following:  
 
 `IDEDistribution: Step failed: <IDEDistributionPackagingStep: 0x7fbf75727ef0>: Error Domain=IDEFoundationErrorDomain Code=1 "ipatool failed with an exception: #<CmdSpec::NonZeroExcitException: /Applications/Xcode.app/Contents/Developer/usr/bin/bitcode-build-tool exited with pid 64585 exit 1`
 
@@ -234,7 +234,7 @@ Somewhere when it comes to the command `xcodebuild -exportArchive -exportOptions
 
 If you want to build your app not just in Xcode for `debug` but also, in `release` to bring the app into the app store you can't avoid the part of exporting the archive.
 
-For me the errors looked like "there is some macOS stuff inside my iOS binary". So i checked the configuration and found quite a few entries:
+For me the errors looked like "there is some macOS stuff inside my iOS binary". So I checked the configuration and found quite a few entries:
 
 ![Remaining macOS Stuff]({{site.url}}/assets/spm_ios/6_remaining_macos_stuff.png){:width="100%"}
 
@@ -289,7 +289,7 @@ task :dependencies do
 end
 {% endhighlight %}
 
-Update your dependencies using `rake dependencies`. From this point on, the export of the archive worked for me and i hope yours will work as well.
+Update your dependencies using `rake dependencies`. From this point on, the export of the archive worked for me and I hope yours will work as well.
 
 For uploads to AppStore Connect you may have to set `CURRENT_PROJECT_VERSION` in your Build Settings.
 
