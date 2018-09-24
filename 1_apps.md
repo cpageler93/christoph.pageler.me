@@ -4,6 +4,19 @@ title: Apps
 permalink: /apps/
 ---
 
+# Datenschutz Klaus
+
+**Platform**: iOS
+
+Starting October 3, 2018, all apps will need a privacy policy. "Datenschutz Klaus" helps you to create a privacy statement and hosts it for you.
+
+Read more on: [lumos-app.de](http://lumos-app.de)  
+View on App Store: [Link](https://itunes.apple.com/us/app/datenschutz-klaus/id1436429542)  
+
+<br/>
+<hr/>
+<br/>
+
 # Lumos
 
 **Platform**: iOS, macOS
