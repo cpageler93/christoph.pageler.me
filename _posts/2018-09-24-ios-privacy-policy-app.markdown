@@ -6,7 +6,7 @@ date:   2018-09-24 08:00:00 +0200
 
 Hey,
 
-as you may have read in the [news][9to4macnews], starting from October 3, 2018 all apps need a privacy policy before they can be submitted on the App Store. Apple is now.
+as you may have read in the [news][9to4macnews], starting from October 3, 2018 all apps need a privacy policy before they can be submitted on the App Store.
 
 On the AppStore Connect website Apple announces the following:
 
