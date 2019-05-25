@@ -11,6 +11,8 @@ permalink: /apps/
 JP Fan App is an App for Jean Piere from [JP Performance GmbH](https://www.jp-performance.de).  
 The app contains all his cars, images, stages with measured timings, HP and NM.
 
+Join JP Fan App beta! [TestFlight Link](https://testflight.apple.com/join/svooJZuJ)
+
 View on App Store: [Link](https://itunes.apple.com/us/app/jp-fan-app/id1286558522)
 
 <br/>
